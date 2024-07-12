@@ -1,8 +1,7 @@
-import {readFileSync} from "node:fs"
+import articles from "../data/news.json" assert{type:"json"};
 const getNews =async (req, res)=>{
     console.log("A")
-    let articles = readFileSync("./data/news.json");
-    res.status(200).send({articles:JSON.parse(articles)});
+    res.status(200).send({articles:articles});
 }
 
 export {getNews};
